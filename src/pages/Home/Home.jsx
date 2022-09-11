@@ -1,7 +1,7 @@
 export const Home = () => {
   return (
     <>
-      <div className="App">
+      <div className="">
         <h1>Atomic Labs</h1>
       </div>
     </>

@@ -3,8 +3,9 @@ import { useMemo } from 'react';
 
 const classes = {
   primary: 'bg-primary text-white hover:bg-secondary',
-  default: 'bg-white text-secondary hover:bg-secondary hover:text-white',
-  link: 'text-secondary hover:text-white hover:underline',
+  default:
+    'bg-white text-secondary-light hover:bg-secondary-light hover:text-white',
+  link: 'text-secondary-light hover:text-white hover:underline',
 };
 
 export const Button = ({
