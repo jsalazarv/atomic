@@ -1,9 +1,9 @@
+import { MainBanner } from './components/MainBanner/MainBanner';
+
 export const Home = () => {
   return (
-    <>
-      <div className="">
-        <h1>Atomic Labs</h1>
-      </div>
-    </>
+    <div className="home">
+      <MainBanner />
+    </div>
   );
 };
