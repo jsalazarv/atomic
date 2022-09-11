@@ -1,0 +1,9 @@
+.button {
+    @apply px-9;
+    @apply py-3;
+    @apply rounded-full;
+    @apply font-extrabold;
+    @apply focus:outline-none;
+    @apply uppercase;
+    @apply text-sm;
+}
