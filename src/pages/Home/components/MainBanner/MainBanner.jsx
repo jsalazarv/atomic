@@ -10,7 +10,7 @@ export const MainBanner = () => {
   };
 
   return (
-    <div className="main-banner bg-[url('./src/assets/images/home/banner-background.png')]">
+    <div className="main-banner bg-[url('./assets/images/home/banner-background.png')]">
       <div className="main-banner__content">
         <div className="content__info">
           <h1 className="title text-white">
