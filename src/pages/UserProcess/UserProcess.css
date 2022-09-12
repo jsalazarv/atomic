@@ -3,22 +3,42 @@
     @apply w-screen;
     @apply bg-center;
     @apply bg-cover;
-    @apply p-6 md:p-16;
+    @apply p-6 md:p-16 lg:p-32;
 }
 
 .hiring-process-content__form {
     @apply w-full md:w-full lg:w-3/4;
-    @apply bg-secondary-light;
+    @apply md:h-1/2 lg:h-auto xl:h-1/2;
+
+    @apply xl:flex;
+    @apply xl:flex-col;
+    @apply xl:items-stretch;
+    @apply xl:justify-around;
+
+}
+
+.form-step {
+    @apply flex;
+    @apply flex-col;
+    gap: 0.5rem;
+}
+
+.submit-container {
+    @apply flex;
+    @apply items-end;
+    @apply justify-end;
+    @apply mt-6;
 }
 
 .hiring-process-content__image {
     @apply w-full md:w-full lg:w-1/2;
     @apply flex;
     @apply justify-center;
+    @apply mt-6 lg:mt-0;
 }
 
 .hiring-process-content__image img {
-    @apply w-2/4 md:w-2/4 lg:w-1/2;
+    @apply w-2/4 md:w-2/4 lg:w-1/2 xl:w-11/12;
 }
 
 .hiring-process-content__form .title-container {

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import stepOneImg from '../../../assets/images/hiring-process/step-one.png';
+import { Button } from '../../../components/Button/Button';
 
 export const FirstStep = ({ next }) => {
   const submitHandler = () => {
@@ -8,7 +9,7 @@ export const FirstStep = ({ next }) => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row h-full items-center">
       <div className="hiring-process-content__form">
         <div className="title-container">
           <div className="dot-counter">1</div>
@@ -19,34 +20,36 @@ export const FirstStep = ({ next }) => {
         <p className="text-white font-semibold">
           Queremos saber que eres tú, por favor ingresa los siguientes datos:
         </p>
-        <div>
+        <form className="form-step">
           <div className="input-container">
-            <div className="flex-1 pr-4">
-              <div className="relative md:w-1/3">
-                <label className="text-white font-medium">Nombre(s)</label>
-                <input type="text" className="input" />
-                <div className="input__icon">
-                  <FontAwesomeIcon icon={faLock} />
-                </div>
+            <div className="relative md:w-full xl:w-2/3">
+              <label className="text-white font-medium">Nombre(s)</label>
+              <input type="text" className="input" />
+              <div className="input__icon">
+                <FontAwesomeIcon icon={faLock} />
               </div>
             </div>
           </div>
           <div className="input-container">
-            <div className="flex-1 pr-4">
-              <div className="relative md:w-1/3">
-                <label className="text-white font-medium">Apellidos</label>
-                <input type="text" className="input" />
-                <div className="input__icon">
-                  <FontAwesomeIcon icon={faLock} />
-                </div>
+            <div className="relative md:w-full xl:w-2/3">
+              <label className="text-white font-medium">Apellidos</label>
+              <input type="text" className="input" />
+              <div className="input__icon">
+                <FontAwesomeIcon icon={faLock} />
               </div>
             </div>
           </div>
 
-          <button type="submit" onClick={submitHandler}>
-            SUBMIT
-          </button>
-        </div>
+          <div className="submit-container">
+            <Button
+              style="primary"
+              className="w-full lg:w-1/4"
+              type="submit"
+              onClick={submitHandler}>
+              ENVIAR
+            </Button>
+          </div>
+        </form>
       </div>
       <div className="hiring-process-content__image">
         <img src={stepOneImg} alt="" />
