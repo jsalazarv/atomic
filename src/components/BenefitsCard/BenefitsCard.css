@@ -1,0 +1,29 @@
+.benefits-card {
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply my-6;
+}
+
+.benefits-card__header {
+    @apply flex;
+    @apply justify-center;
+}
+
+.benefits-card__header__image {
+    @apply w-1/3 md:w-1/2 lg:w-3/4;
+}
+
+.benefits-card__content {
+    @apply text-white;
+    @apply font-semibold;
+}
+
+.benefits-card__content ul li:before {
+    @apply text-primary;
+    @apply mr-3;
+    font-family: "Font Awesome 6 Free", serif;
+    font-weight: 700;
+    content: "\f058";
+}
+
