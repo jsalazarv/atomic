@@ -4,11 +4,7 @@ export const ServicesCard = ({ image, title, list }) => {
   return (
     <div className="services-card">
       <div className="services-card__header">
-        <img
-          className="header__image"
-          src="../../src/assets/images/home/atomic-services/imagine.png"
-          alt=""
-        />
+        <img className="header__image" src={image} alt="" />
       </div>
       <div className="services-card__body">
         <div className="body__title__container">
