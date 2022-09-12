@@ -1,0 +1,80 @@
+.table {
+    @apply rounded-full;
+}
+
+.team-qualities-table .table {
+    @apply shadow-md;
+    @apply rounded;
+    @apply min-w-full;
+    @apply m-auto;
+}
+
+.team-qualities-table thead {
+    @apply sticky;
+    @apply block;
+    @apply top-0;
+}
+
+.team-qualities-table thead tr {
+    @apply flex;
+    @apply text-left;
+    @apply justify-center;
+}
+
+.team-qualities-table thead tr:first-child th {
+    @apply hidden;
+    @apply sm:block;
+    @apply w-1/4;
+    @apply p-4;
+    @apply border;
+    @apply bg-white;
+    @apply border-r-0;
+    @apply border-gray-100;
+}
+
+.team-qualities-table thead tr th {
+    @apply w-1/2 sm:w-1/4;
+    @apply p-4;
+    @apply border;
+    @apply bg-white;
+    @apply border-r-0;
+    @apply border-gray-100;
+    @apply text-center;
+}
+
+.table__body tr {
+    @apply flex;
+    @apply text-left;
+    @apply flex-wrap;
+    @apply justify-center;
+}
+
+.table__body tr th {
+    @apply min-w-full sm:min-w-0 sm:w-1/4;
+    @apply p-4;
+    @apply border;
+    @apply bg-white;
+    @apply border-r-0;
+    @apply border-gray-200;
+    @apply font-normal;
+    @apply flex;
+    @apply items-center;
+    @apply border-b-0 sm:border-b;
+}
+
+.table__body tr td {
+    @apply w-1/2 sm:w-1/4;
+    @apply p-4;
+    @apply border;
+    @apply border-gray-200;
+    @apply border-r-0;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+}
+
+.table__body tr td .icon{
+    @apply text-primary;
+    @apply font-black;
+    @apply text-3xl;
+}
