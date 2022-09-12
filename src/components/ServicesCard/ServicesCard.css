@@ -1,0 +1,69 @@
+.services-card {
+    @apply bg-white hover:bg-primary;
+    @apply text-primary hover:text-white;
+    @apply p-9;
+    @apply rounded-lg;
+}
+
+.services-card__header {
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+}
+
+.header__image {
+    @apply w-1/2;
+}
+
+.body__title__container {
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply mb-6;
+}
+
+.body__title__container .title {
+    @apply font-extrabold;
+    @apply text-xl;
+}
+
+.service-list {
+    @apply text-black;
+}
+
+.services-card:hover .service-list {
+    @apply text-white;
+}
+
+/** Title Divider **/
+
+.divider {
+    @apply flex;
+    @apply items-center;
+    @apply w-2/4;
+}
+.divider:before, .divider:after {
+    content: "";
+    flex: 1;
+}
+
+.line {
+    @apply items-center;
+    @apply font-extrabold
+}
+
+.line:before, .line:after {
+    @apply my-0;
+    @apply mx-4;
+    height: 3px;
+}
+
+.one-line:before, .one-line:after {
+    @apply bg-primary;
+}
+
+.services-card:hover .one-line:before, .services-card:hover .one-line:after {
+    @apply bg-white;
+}
+
+/** End Title Divider **/

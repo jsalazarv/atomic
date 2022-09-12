@@ -1,0 +1,19 @@
+.service-cards {
+    @apply flex;
+    @apply flex-wrap;
+    @apply my-6 md:my-12 lg:my-20;
+    @apply -mx-1 lg:-mx-4;
+    @apply justify-center;
+}
+
+.card-container {
+    @apply my-1;
+    @apply px-1;
+    @apply w-full md:w-1/2 lg:w-1/3 xl:w-1/4;
+}
+
+.selected {
+    transform: scale(1.3);
+    z-index: 99999;
+    position: absolute;
+}
