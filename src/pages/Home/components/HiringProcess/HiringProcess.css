@@ -1,0 +1,52 @@
+.hiring-process {
+    @apply my-10;
+}
+
+.hiring-process__content__info .image__container {
+    @apply flex;
+    @apply justify-center;
+    @apply mt-8;
+    @apply mb-8 lg:mb-0;
+}
+
+.image__container img {
+    @apply w-full;
+    @apply lg:px-16
+}
+
+.process-steps__list {
+    @apply relative;
+    @apply flex;
+    @apply flex-col md:flex-row;
+    @apply justify-center;
+    @apply items-center;
+}
+
+.process-steps__list__item {
+    @apply mb-1 ml-6 md:mr-6;
+    @apply md:flex;
+    @apply md:items-center;
+}
+
+.process-steps__list__item:after {
+    content: "\2B63";
+    @apply text-primary;
+    @apply font-extrabold;
+    @apply text-3xl;
+    @apply md:-rotate-90;
+    @apply md:ml-8;
+    @apply flex;
+    @apply justify-center;
+}
+
+.process-steps__list__item:last-child::after {
+    content: "";
+}
+
+.process-steps__list__item__text {
+    @apply flex;
+    @apply items-center;
+    @apply mb-1;
+    @apply text-white;
+    @apply xl:text-3xl;
+}
