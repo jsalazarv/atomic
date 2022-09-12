@@ -1,6 +1,7 @@
 import { MainBanner } from './components/MainBanner/MainBanner';
 import { AtomicServices } from './components/AtomicServices/AtomicServices';
 import { HiringProcess } from './components/HiringProcess/HiringProcess';
+import { WhyAtomic } from './components/WhyAtomic/WhyAtomic.jsx';
 
 export const Home = () => {
   return (
@@ -8,6 +9,7 @@ export const Home = () => {
       <MainBanner />
       <AtomicServices />
       <HiringProcess />
+      <WhyAtomic />
     </div>
   );
 };
