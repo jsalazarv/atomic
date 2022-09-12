@@ -3,7 +3,6 @@
 }
 
 .team-qualities-table .table {
-    @apply shadow-md;
     @apply rounded;
     @apply min-w-full;
     @apply m-auto;
