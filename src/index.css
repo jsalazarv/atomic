@@ -11,6 +11,11 @@ body {
   @apply font-black;
 }
 
+.subtitle {
+  @apply text-xl md:text-3xl lg:text-4xl xl:text-5xl;
+  @apply font-black;
+}
+
 .wrap {
   @apply p-6 md:p-16;
 }
