@@ -2,7 +2,7 @@ import './Button.css';
 import { useMemo } from 'react';
 
 const classes = {
-  primary: 'bg-primary text-white hover:bg-secondary',
+  primary: 'bg-primary text-white hover:bg-secondary-light',
   default:
     'bg-white text-secondary-light hover:bg-secondary-light hover:text-white',
   link: 'text-white hover:text-primary hover:underline',
