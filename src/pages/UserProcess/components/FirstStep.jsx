@@ -52,7 +52,7 @@ export const FirstStep = ({ next }) => {
         </form>
       </div>
       <div className="hiring-process-content__image">
-        <img src={stepOneImg} alt="" />
+        <img className="float-animation" src={stepOneImg} alt="" />
       </div>
     </div>
   );

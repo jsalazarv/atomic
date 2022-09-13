@@ -96,3 +96,38 @@
     @apply text-gray-500;
     height: 100%;
 }
+
+
+.float-animation {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-20px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.rotate-animation {
+    animation: rotate 500s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
