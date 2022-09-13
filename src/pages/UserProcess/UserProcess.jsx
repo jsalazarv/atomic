@@ -3,6 +3,7 @@ import { FirstStep } from './components/FirstStep.jsx';
 import { useMemo, useState } from 'react';
 import { SecondStep } from './components/SecondStep';
 import { ThirdStep } from './components/ThirdStep';
+import { FourthStep } from './components/FourthStep';
 
 export const UserProcess = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -17,6 +18,7 @@ export const UserProcess = () => {
     <FirstStep next={next} />,
     <SecondStep next={next} prev={prev} />,
     <ThirdStep next={next} prev={prev} />,
+    <FourthStep next={next} prev={prev} />,
   ];
   const step = useMemo(() => steps[currentStep], [currentStep]);
 
