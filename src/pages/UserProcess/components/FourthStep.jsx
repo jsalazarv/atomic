@@ -21,7 +21,7 @@ export const FourthStep = ({ next, prev }) => {
     nextHandler();
   };
   return (
-    <div className="flex flex-col lg:flex-row h-full items-center">
+    <div className="flex flex-col lg:flex-row h-auto items-center mt-32">
       <div className="hiring-process-content__form">
         <div className="title-container">
           <div className="dot-counter">4</div>
@@ -61,9 +61,6 @@ export const FourthStep = ({ next, prev }) => {
             </Button>
           </div>
         </form>
-      </div>
-      <div className="hiring-process-content__image">
-        <img className="float-animation" src={stepFourthImg} alt="" />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import stepOneImg from '../../../assets/images/hiring-process/step-one.png';
 import { Button } from '../../../components/Button/Button';
 import { useFormStateContext } from '../../../contexts/FormStateContext.jsx';
 import { useForm } from 'react-hook-form';
+import { Loader } from '../../../components/Loader/Loader';
 
 export const FirstStep = ({ next }) => {
   const { state, updateState } = useFormStateContext();
@@ -21,7 +22,7 @@ export const FirstStep = ({ next }) => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-full items-center">
+    <div className="flex flex-col lg:flex-row h-auto items-center mt-32">
       <div className="hiring-process-content__form">
         <div className="title-container">
           <div className="dot-counter">1</div>
@@ -34,7 +35,7 @@ export const FirstStep = ({ next }) => {
         </p>
         <form className="form-step" onSubmit={handleSubmit(submit)}>
           <div className="input-container">
-            <div className="relative md:w-full xl:w-2/3">
+            <div className="relative w-full lg:w-3/4">
               <label className="text-white font-medium">Nombre(s)</label>
               <input
                 type="text"
@@ -47,7 +48,7 @@ export const FirstStep = ({ next }) => {
             </div>
           </div>
           <div className="input-container">
-            <div className="relative md:w-full xl:w-2/3">
+            <div className="relative w-full lg:w-3/4">
               <label className="text-white font-medium">Apellidos</label>
               <input
                 type="text"
@@ -70,9 +71,6 @@ export const FirstStep = ({ next }) => {
             </Button>
           </div>
         </form>
-      </div>
-      <div className="hiring-process-content__image">
-        <img className="float-animation" src={stepOneImg} alt="" />
       </div>
     </div>
   );
