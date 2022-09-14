@@ -6,6 +6,7 @@ import { ThirdStep } from './components/ThirdStep';
 import { FourthStep } from './components/FourthStep';
 import { FifthStep } from './components/FifthStep';
 import { FormStateContext } from '../../contexts/FormStateContext';
+import { ProgressBar } from './components/ProgressBar';
 
 export const UserProcess = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -28,11 +29,18 @@ export const UserProcess = () => {
     name: '',
     phone: '',
   };
+  const progressSteps = steps.length - 1;
+  const isCompleted = currentStep >= progressSteps;
 
   return (
     <FormStateContext initialState={initialState}>
       <div className="hiring-process-container">
         <div className="main-banner bg-[url('./assets/images/home/banner-background.png')]">
+          <ProgressBar
+            steps={progressSteps}
+            current={currentStep}
+            hidden={isCompleted}
+          />
           {step}
         </div>
       </div>
