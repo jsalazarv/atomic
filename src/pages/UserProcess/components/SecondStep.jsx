@@ -75,7 +75,7 @@ export const SecondStep = ({ next, prev }) => {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row h-full items-center">
+    <div className="flex flex-col lg:flex-row h-auto items-center mt-32">
       <div className="hiring-process-content__form">
         <div className="title-container">
           <div className="dot-counter">2</div>
@@ -89,7 +89,7 @@ export const SecondStep = ({ next, prev }) => {
         </p>
         <form className="form-step" onSubmit={handleSubmit(submit)}>
           <div className="input-container">
-            <div className="relative md:w-full xl:w-2/3">
+            <div className="relative w-full lg:w-3/4">
               <label className="text-white font-medium">
                 Número de Celular
               </label>
@@ -117,9 +117,6 @@ export const SecondStep = ({ next, prev }) => {
             </Button>
           </div>
         </form>
-      </div>
-      <div className="hiring-process-content__image">
-        <img className="float-animation" src={stepTwoImg} alt="" />
       </div>
     </div>
   );

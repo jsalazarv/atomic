@@ -11,11 +11,11 @@ export const FifthStep = ({ next, prev }) => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-full items-center">
+    <div className="flex flex-col lg:flex-row h-auto items-center mt-32">
       <div className="hiring-process-content__form">
         <div className="title-container">
           <h1 className="subtitle text-white">
-            TUS DATOS{' '}
+            TUS DATOS
             <span className="text-primary">
               &nbsp;HAN SIDO ENVIADOS CON ÉXITO
             </span>
@@ -29,9 +29,6 @@ export const FifthStep = ({ next, prev }) => {
           <br />
           ¡Esperamos verte pronto!
         </p>
-      </div>
-      <div className="hiring-process-content__image">
-        <img className="float-animation" src={stepFifthImg} alt="" />
       </div>
     </div>
   );
