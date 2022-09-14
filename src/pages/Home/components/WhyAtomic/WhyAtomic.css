@@ -15,13 +15,13 @@
     @apply my-6 md:my-12 lg:my-20;
     @apply justify-center;
     @apply gap-x-20 md:gap-x-0 lg:gap-x-20;
-    @apply h-auto lg:h-96;
+    @apply h-auto md:h-64 xl:h-96;
 }
 
 .benefit__card__container {
     @apply my-1;
     @apply px-1;
-    @apply w-full md:w-1/2 lg:w-1/3 xl:w-1/4;
+    @apply w-full md:w-1/4;
     @apply relative;
     @apply -top-24 md:-top-36 lg:-top-44;
 }

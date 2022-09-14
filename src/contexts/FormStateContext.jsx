@@ -5,7 +5,6 @@ const FormContext = createContext({});
 export const FormStateContext = ({ children, initialState = {} }) => {
   const [state, setState] = useState(initialState);
   const updateState = (newState = {}) => {
-    console.log(newState);
     setState({ ...state, ...newState });
   };
 

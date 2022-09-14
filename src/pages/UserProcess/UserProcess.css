@@ -17,6 +17,36 @@
 
 }
 
+.progress-bar-steps {
+    @apply w-full lg:w-3/5;
+    @apply mt-6 mb-12;
+}
+
+.progress-bar-steps .bar-steps {
+    @apply flex;
+    @apply justify-around;
+}
+
+.bar-steps .dot-counter {
+    @apply w-10 md:w-12;
+    @apply w-10 md:h-12;
+    @apply rounded-full;
+    @apply bg-primary;
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    @apply font-extrabold;
+    @apply text-white;
+    @apply text-lg md:text-3xl;
+    @apply mb-5;
+    @apply p-1.5 md:p-6;
+}
+
+.bar-steps .pending {
+    @apply bg-gray-400;
+}
+
+
 .form-step {
     @apply flex;
     @apply flex-col;
