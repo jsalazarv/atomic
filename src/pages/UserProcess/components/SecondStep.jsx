@@ -7,12 +7,16 @@ import { useState } from 'react';
 
 const smsHandlerService = new SMSHandlerService();
 
-export const SecondStep = ({ next, prev }) => {
-  const [phone, setPhone] = useState('');
+import { useFormStateContext } from '../../../contexts/FormStateContext.jsx';
+import { useForm } from 'react-hook-form';
 
-  const handleChange = (event) => {
-    setPhone(event.target.value);
-  };
+export const SecondStep = ({ next, prev }) => {
+  const { state, updateState } = useFormStateContext();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm({ mode: 'onChange' });
 
   const nextHandler = () => {
     next && next();
@@ -22,16 +26,29 @@ export const SecondStep = ({ next, prev }) => {
     prev && prev();
   };
 
-  const getVerificationCode = async () => {
+  const getVerificationCode = async (phone) => {
     const phoneWhitCountryCode = `+52${phone}`;
 
     try {
-      await smsHandlerService.getVerificationCode({
+      const {
+        data: { sid },
+      } = await smsHandlerService.getVerificationCode({
         phone: phoneWhitCountryCode,
       });
-      nextHandler();
+
+      return sid;
     } catch (error) {
-      console.log(error);
+      return null;
+    }
+  };
+
+  const submit = async (values) => {
+    const { phone } = values;
+    const sid = await getVerificationCode(phone);
+
+    if (sid) {
+      updateState({ phone, sid });
+      nextHandler();
     }
   };
 
@@ -48,17 +65,20 @@ export const SecondStep = ({ next, prev }) => {
           Necesitamos validar tu número para continuar <br />
           Ingresa tu número a 10 dígitos y te enviaremos un código SMS
         </p>
-        <div className="form-step">
+        <form className="form-step" onSubmit={handleSubmit(submit)}>
           <div className="input-container">
             <div className="relative md:w-full xl:w-2/3">
               <label className="text-white font-medium">
                 Número de Celular
               </label>
               <input
-                type="text"
+                type="number"
                 className="input"
-                onChange={handleChange}
-                value={phone}
+                {...register('phone', {
+                  required: true,
+                  minLength: 10,
+                  maxLength: 10,
+                })}
               />
               <div className="input__icon">
                 <FontAwesomeIcon icon={faLock} />
@@ -69,11 +89,12 @@ export const SecondStep = ({ next, prev }) => {
             <Button
               style="primary"
               className="w-full lg:w-1/4"
-              onClick={getVerificationCode}>
+              type="submit"
+              disabled={!isValid}>
               CONTINUAR
             </Button>
           </div>
-        </div>
+        </form>
       </div>
       <div className="hiring-process-content__image">
         <img className="float-animation" src={stepTwoImg} alt="" />
