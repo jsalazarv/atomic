@@ -1,13 +1,24 @@
 import { Button } from '../../../components/Button/Button.jsx';
 import stepFourthImg from '../../../assets/images/hiring-process/fourth-step.png';
+import { useForm } from 'react-hook-form';
 
 export const FourthStep = ({ next, prev }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm({ mode: 'onChange' });
+
   const nextHandler = () => {
     next && next();
   };
 
   const prevHandler = () => {
     prev && prev();
+  };
+
+  const submit = async () => {
+    nextHandler();
   };
   return (
     <div className="flex flex-col lg:flex-row h-full items-center">
@@ -27,11 +38,14 @@ export const FourthStep = ({ next, prev }) => {
             Consulta Términos y Condiciones
           </Button>
         </p>
-        <form className="form-step">
+        <form className="form-step" onSubmit={handleSubmit(submit)}>
           <label className="flex items-center">
             <input
               type="checkbox"
               className="accent-primary w-6 h-6 hover:accent-primary"
+              {...register('terms', {
+                required: true,
+              })}
             />
             <span className="ml-3 text-white font-bold hover:text-primary">
               Acepto los términos y condiciones
@@ -42,7 +56,7 @@ export const FourthStep = ({ next, prev }) => {
               style="primary"
               className="w-full lg:w-1/4"
               type="submit"
-              onClick={nextHandler}>
+              disabled={!isValid}>
               ENVIAR
             </Button>
           </div>
