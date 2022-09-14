@@ -39,7 +39,6 @@ export const UserProcess = () => {
   const progressSteps = steps.length - 1;
   const isCompleted = currentStep >= progressSteps;
 
-  console.log(stepImages);
   return (
     <FormStateContext initialState={initialState}>
       <div className="hiring-process-container">
