@@ -1,0 +1,42 @@
+.container-footer {
+    @apply flex;
+    @apply flex-col-reverse lg:flex-row;
+    @apply justify-between;
+    @apply items-center;
+    @apply p-6;
+    @apply w-full;
+    @apply lg:px-32;
+}
+.rights-reserved{
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    @apply sm:justify-start;
+    @apply p-2
+}
+.text-footer{
+    @apply text-white;
+    @apply text-center;
+    @apply flex;
+    @apply items-center;
+}
+.notice-privacy{
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    @apply p-2
+}
+.social-networks{
+    @apply text-center;
+    @apply flex;
+    @apply justify-around;
+    @apply items-center;
+    @apply text-white;
+    @apply p-2
+}
+.icon{
+    @apply px-2;
+    @apply text-2xl;
+    @apply sm:text-3xl;
+    @apply hover:text-primary;
+}
