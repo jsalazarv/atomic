@@ -5,6 +5,10 @@ import stepTwoImg from '../../../assets/images/hiring-process/step-two.png';
 import { useFormStateContext } from '../../../contexts/FormStateContext.jsx';
 import { useForm } from 'react-hook-form';
 import { SMSHandlerService } from '../../../services/SMSHandlerService.js';
+import { useEffect } from 'react';
+import { Loader } from '../../../components/Loader/Loader.jsx';
+import imgPlane from '../../../assets/images/hiring-process/plane.png';
+import imgSuccess from '../../../assets/images/hiring-process/checkmark.png';
 
 const smsHandlerService = new SMSHandlerService();
 
@@ -13,7 +17,7 @@ export const ThirdStep = ({ next, prev }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting, isSubmitSuccessful },
   } = useForm({ mode: 'onChange' });
 
   const nextHandler = () => {
@@ -41,12 +45,28 @@ export const ThirdStep = ({ next, prev }) => {
 
   const submit = async (values) => {
     const { otp } = values;
-    const success = await verifyOtp(otp, state.sid);
-
-    if (success) {
-      nextHandler();
-    }
+    await verifyOtp(otp, state.sid);
   };
+
+  useEffect(() => {
+    if (isSubmitSuccessful && !isSubmitting) {
+      const timer = setTimeout(() => {
+        nextHandler();
+      }, 2000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [isSubmitSuccessful]);
+
+  if (isSubmitting && isValid) {
+    return <Loader title="Estamos validando el código..." image={imgPlane} />;
+  }
+
+  if (isSubmitSuccessful) {
+    return <Loader title="Hemos validado el código..." image={imgSuccess} />;
+  }
 
   return (
     <div className="flex flex-col lg:flex-row h-full items-center">

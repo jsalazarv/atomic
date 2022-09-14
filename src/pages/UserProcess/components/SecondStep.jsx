@@ -3,19 +3,22 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '../../../components/Button/Button.jsx';
 import stepTwoImg from '../../../assets/images/hiring-process/step-two.png';
 import { SMSHandlerService } from '../../../services/SMSHandlerService.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import imgPlane from '../../../assets/images/hiring-process/plane.png';
+import imgSuccess from '../../../assets/images/hiring-process/checkmark.png';
 
 const smsHandlerService = new SMSHandlerService();
 
 import { useFormStateContext } from '../../../contexts/FormStateContext.jsx';
 import { useForm } from 'react-hook-form';
+import { Loader } from '../../../components/Loader/Loader';
 
 export const SecondStep = ({ next, prev }) => {
   const { state, updateState } = useFormStateContext();
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting, isSubmitSuccessful },
   } = useForm({ mode: 'onChange' });
 
   const nextHandler = () => {
@@ -48,9 +51,28 @@ export const SecondStep = ({ next, prev }) => {
 
     if (sid) {
       updateState({ phone, sid });
-      nextHandler();
     }
   };
+
+  useEffect(() => {
+    if (isSubmitSuccessful && !isSubmitting) {
+      const timer = setTimeout(() => {
+        nextHandler();
+      }, 2000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [isSubmitSuccessful]);
+
+  if (isSubmitting && isValid) {
+    return <Loader title="Te estamos enviando el código..." image={imgPlane} />;
+  }
+
+  if (isSubmitSuccessful) {
+    return <Loader title="Hemos enviado el código..." image={imgSuccess} />;
+  }
 
   return (
     <div className="flex flex-col lg:flex-row h-full items-center">
