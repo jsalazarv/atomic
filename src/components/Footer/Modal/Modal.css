@@ -1,0 +1,33 @@
+.modal{
+    @apply fixed;
+    @apply z-50;
+    @apply top-0;
+    @apply left-0;
+    @apply w-full;
+    @apply min-h-screen;
+    @apply bg-slate-700;
+    @apply hidden;
+    @apply justify-center;
+    @apply items-center;
+}
+
+.modal.is-open{
+    @apply flex;
+}
+
+.modal-container{
+    @apply relative;
+    @apply bg-white;
+    @apply overflow-y-auto;
+    @apply p-8;
+    min-width: 320px;
+    max-width: 400px;
+    min-height: 200px;
+    min-height: 400px;
+}
+
+.modal-close{
+    @apply absolute;
+    @apply top-4;
+    @apply right-4;
+}
