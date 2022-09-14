@@ -1,0 +1,30 @@
+.loader {
+    @apply h-screen;
+    @apply w-screen;
+    @apply bg-center;
+    @apply bg-cover;
+    @apply p-6 md:p-16;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.loader__content {
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply items-center;
+    @apply h-full;
+}
+
+.loader__content .image{
+    @apply mb-6;
+}
+
+.loader__content .title{
+    @apply text-white;
+    @apply text-xl md:text-3xl;
+    @apply font-normal;
+}
