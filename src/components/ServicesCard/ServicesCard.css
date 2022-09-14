@@ -4,6 +4,10 @@
     @apply p-9;
     @apply rounded-lg;
 }
+.services-card:hover{
+    @apply lg:scale-x-110;
+    @apply lg:scale-y-125;
+}
 
 .services-card__header {
     @apply flex;
